@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "esnext",
+    "target": "esnext",
+    "lib": ["ESNext"],
+    "strict": true,
+    "skipLibCheck": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "moduleResolution": "bundler",
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force"
+  },
+  "exclude": ["node_modules", "dist"]
+}

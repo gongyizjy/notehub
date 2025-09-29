@@ -1,0 +1,65 @@
+{
+  "name": "notehub",
+  "version": "0.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev:client": "pnpm -C apps/client dev",
+    "build:client": "pnpm -C apps/client build",
+    "preview:client": "pnpm -C apps/client preview",
+    "dev:server": "pnpm -C apps/server start:dev",
+    "build:server": "pnpm -C apps/server build",
+    "dev": "pnpm run dev:client && pnpm run dev:server",
+    "format": "prettier --write \"**/*.{js,ts,json,tsx,css,scss,jsx,md}\"",
+    "lint": "pnpm run lint:prettier && pnpm run lint:eslint",
+    "lint:prettier": "prettier --check \"**/*.{js,ts,json,tsx,css,scss,jsx,md}\"",
+    "lint:eslint": "eslint .",
+    "lint:fix": "eslint . --fix && pnpm run format",
+    "prepare": "husky",
+    "precommit": "lint-staged",
+    "commit": "git-cz",
+    "test": "vitest"
+  },
+  "author": "sober",
+  "packageManager": "pnpm@10.15.0",
+  "devDependencies": {
+    "@commitlint/cli": "^20.0.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@eslint/js": "^9.36.0",
+    "@types/node": "latest",
+    "@vitejs/plugin-react": "^5.0.4",
+    "@vitest/browser": "^3.2.4",
+    "commitizen": "^4.3.1",
+    "cz-git": "^1.12.0",
+    "esbuild": "^0.25.10",
+    "eslint": "^9.36.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-sonarjs": "^3.0.5",
+    "eslint-plugin-unicorn": "^61.0.2",
+    "globals": "^16.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.3",
+    "prettier": "^3.6.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.44.1",
+    "vitest": "^3.2.4",
+    "vitest-browser-react": "^1.0.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
+  "engines": {
+    "node": ">=20.19.5",
+    "npm": ">=10.8.2",
+    "pnpm": ">=10.15.0"
+  }
+}
