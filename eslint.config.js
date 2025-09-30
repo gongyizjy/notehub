@@ -9,13 +9,7 @@ import eslintPluginSonar from 'eslint-plugin-sonarjs';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import { defineConfig } from 'eslint/config';
 
-const ignores = [
-  '**/dist/**',
-  '**/node_modules/**',
-  '**/*.d.ts',
-  '**/__test__/**',
-  '**/test/**,',
-];
+const ignores = ['**/dist/**', '**/node_modules/**', '**/*.d.ts'];
 
 export default defineConfig([
   // 通用的配置
@@ -49,10 +43,7 @@ export default defineConfig([
       'apps/client/**/*.{js,ts,jsx,tsx}',
       'packages/components/**/*.{js,ts,jsx,tsx}',
     ],
-    extends: [
-      eslintPluginReact.configs.flat.recommended.languageOptions,
-      eslintConfigPrettier,
-    ],
+    extends: [eslintPluginReact.configs.flat.recommended, eslintConfigPrettier],
     languageOptions: {
       globals: {
         ...globals.browser,
